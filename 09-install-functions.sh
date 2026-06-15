@@ -47,6 +47,21 @@ if [ $USERID -ne 0 ]; then
 fi
 
 
+dnf list installed mysql
+
+if [ $? -eq 0 ]; then
+    echo "Mysql is already installed.. SKIPPING"
+else 
+    echo "Install MySQL..."
+    dnf install mysql -y
+
+    if [ $? -ne 0 ]; then
+        echo "Installing mysql is ... FAILED"
+        exit 1
+    else
+        echo "Installing mysql is ... SUCCESS"
+    fi
+fi
 # first arg -> what are you trying to install
 # second arg -> exit code
 # VALIDATE(){
