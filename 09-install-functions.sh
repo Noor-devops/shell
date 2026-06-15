@@ -62,6 +62,22 @@ else
         echo "Installing mysql is ... SUCCESS"
     fi
 fi
+
+dnf list installed nginx
+
+if [ $? -eq 0 ]; then
+    echo "nginx is already installed.. SKIPPING"
+else 
+    echo "Install nginx..."
+    dnf install nginx -y
+
+    if [ $? -ne 0 ]; then
+        echo "Installing ngnix is ... FAILED"
+        exit 1
+    else
+        echo "Installing ngnix is ... SUCCESS"
+    fi
+fi
 # first arg -> what are you trying to install
 # second arg -> exit code
 # VALIDATE(){
