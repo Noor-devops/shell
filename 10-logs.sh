@@ -41,6 +41,16 @@ else
     VALIDATE nginx $?
 fi
 
+dnf list installed git
+
+if [ $? -eq 0 ]; then
+    echo "git is already installed.. SKIPPING"
+else 
+    echo "Install git..."
+    dnf install git -y
+    VALIDATE git $?
+fi
+
 # redirections
 # ============
 # < -> inputs
