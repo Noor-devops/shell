@@ -46,7 +46,6 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-echo "I am continuing.......Afrin"
 
 # first arg -> what are you trying to install
 # second arg -> exit code
