@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-echo "Please run this script with root access"
+echo "Please run this script with $USERID root access"
 
 # Check root access or not
 # if [ $USERID -ne 0 ]; then
