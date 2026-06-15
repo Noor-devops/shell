@@ -78,6 +78,22 @@ else
         echo "Installing ngnix is ... SUCCESS"
     fi
 fi
+
+dnf list installed git
+
+if [ $? -eq 0 ]; then
+    echo "git is already installed.. SKIPPING"
+else 
+    echo "Install git..."
+    dnf install git -y
+
+    if [ $? -ne 0 ]; then
+        echo "Installing git is ... FAILED"
+        exit 1
+    else
+        echo "Installing git is ... SUCCESS"
+    fi
+fi
 # first arg -> what are you trying to install
 # second arg -> exit code
 # VALIDATE(){
