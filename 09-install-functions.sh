@@ -62,41 +62,28 @@ if [ $? -eq 0 ]; then
 else 
     echo "Install MySQL..."
     dnf install mysql -y
-    VALIDATE mysql $?
-    
+    VALIDATE mysql $?  
 fi
 
-# dnf list installed nginx
+dnf list installed nginx
 
-# if [ $? -eq 0 ]; then
-#     echo "nginx is already installed.. SKIPPING"
-# else 
-#     echo "Install nginx..."
-#     dnf install nginx -y
+if [ $? -eq 0 ]; then
+    echo "nginx is already installed.. SKIPPING"
+else 
+    echo "Install nginx..."
+    dnf install nginx -y
+    VALIDATE nginx $?
+fi
 
-#     if [ $? -ne 0 ]; then
-#         echo "Installing ngnix is ... FAILED"
-#         exit 1
-#     else
-#         echo "Installing ngnix is ... SUCCESS"
-#     fi
-# fi
+dnf list installed git
 
-# dnf list installed git
-
-# if [ $? -eq 0 ]; then
-#     echo "git is already installed.. SKIPPING"
-# else 
-#     echo "Install git..."
-#     dnf install git -y
-
-#     if [ $? -ne 0 ]; then
-#         echo "Installing git is ... FAILED"
-#         exit 1
-#     else
-#         echo "Installing git is ... SUCCESS"
-#     fi
-# fi
+if [ $? -eq 0 ]; then
+    echo "git is already installed.. SKIPPING"
+else 
+    echo "Install git..."
+    dnf install git -y
+    VALIDATE git $?
+fi
 # first arg -> what are you trying to install
 # second arg -> exit code
 # VALIDATE(){
