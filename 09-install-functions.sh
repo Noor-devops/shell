@@ -46,6 +46,14 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+VALIDATE(){
+    if [ $2 -ne 0 ]; then
+        echo "Installing $1 is ... FAILED"
+        exit 1
+    else
+        echo "Installing $1 is ... SUCCESS"
+    fi
+}
 
 dnf list installed mysql
 
@@ -54,46 +62,41 @@ if [ $? -eq 0 ]; then
 else 
     echo "Install MySQL..."
     dnf install mysql -y
-
-    if [ $? -ne 0 ]; then
-        echo "Installing mysql is ... FAILED"
-        exit 1
-    else
-        echo "Installing mysql is ... SUCCESS"
-    fi
+    VALIDATE mysql $?
+    
 fi
 
-dnf list installed nginx
+# dnf list installed nginx
 
-if [ $? -eq 0 ]; then
-    echo "nginx is already installed.. SKIPPING"
-else 
-    echo "Install nginx..."
-    dnf install nginx -y
+# if [ $? -eq 0 ]; then
+#     echo "nginx is already installed.. SKIPPING"
+# else 
+#     echo "Install nginx..."
+#     dnf install nginx -y
 
-    if [ $? -ne 0 ]; then
-        echo "Installing ngnix is ... FAILED"
-        exit 1
-    else
-        echo "Installing ngnix is ... SUCCESS"
-    fi
-fi
+#     if [ $? -ne 0 ]; then
+#         echo "Installing ngnix is ... FAILED"
+#         exit 1
+#     else
+#         echo "Installing ngnix is ... SUCCESS"
+#     fi
+# fi
 
-dnf list installed git
+# dnf list installed git
 
-if [ $? -eq 0 ]; then
-    echo "git is already installed.. SKIPPING"
-else 
-    echo "Install git..."
-    dnf install git -y
+# if [ $? -eq 0 ]; then
+#     echo "git is already installed.. SKIPPING"
+# else 
+#     echo "Install git..."
+#     dnf install git -y
 
-    if [ $? -ne 0 ]; then
-        echo "Installing git is ... FAILED"
-        exit 1
-    else
-        echo "Installing git is ... SUCCESS"
-    fi
-fi
+#     if [ $? -ne 0 ]; then
+#         echo "Installing git is ... FAILED"
+#         exit 1
+#     else
+#         echo "Installing git is ... SUCCESS"
+#     fi
+# fi
 # first arg -> what are you trying to install
 # second arg -> exit code
 # VALIDATE(){
