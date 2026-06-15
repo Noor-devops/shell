@@ -58,7 +58,11 @@ fi
 #     fi
 # }
 
+# echo "I am continuing..."
+echo "Install MySQL..."
+dnf install mysafrinql -y
 echo "I am continuing..."
+echo "I am still continuing..."
 # dnf list installed mysql
 
 # if [ $? -eq 0 ]; then
