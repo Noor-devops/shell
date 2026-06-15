@@ -8,11 +8,11 @@ echo "Script name: $0"
 echo "Who is running this: $USER"
 echo "Which directory: $PWD"
 echo "Home directory: $HOME"
-# echo "PID of the current script: $$"
-# sleep 5 &
-# echo "PID of the background command running just now: $!"
-# wait $!
-# echo "Line number: $LINENO"
-# echo "Script executed in $SECONDS seconds"
-# echo "Random number: $RANDOM"
-# echo "Exit code of previous command: $?"
+echo "PID of the current script: $$"
+sleep 5 &
+echo "PID of the background command running just now: $!"
+wait $!
+echo "Line number: $LINENO"
+echo "Script executed in $SECONDS seconds"
+echo "Random number: $RANDOM"
+echo "Exit code of previous command: $?"
