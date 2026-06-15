@@ -58,7 +58,7 @@ fi
 #     fi
 # }
 
-# echo "I am continuing..."
+echo "I am continuing..."
 # dnf list installed mysql
 
 # if [ $? -eq 0 ]; then
