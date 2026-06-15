@@ -60,7 +60,7 @@ fi
 
 # echo "I am continuing..."
 echo "Install MySQL..."
-dnf install mysql -y
+dnf install mysffql -y
 echo "I am continuing..."
 echo "I am still continuing..."
 if [ $? -ne 0 ]; then
