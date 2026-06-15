@@ -24,7 +24,7 @@ wait $!
 num1=$1
 num2=$2
 
-if [ $num1 -ge $num2]; then
+if [ $num1 -ge $num2 ]; then
     echo "given number $num1 is grater or equl to $num2"
 else   
     echo "given number $num1 is less to $num2"
