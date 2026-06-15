@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 USERID=$(id -u)
@@ -39,3 +38,10 @@ do
         echo -e "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $N"
     fi
 done
+
+
+# R -> 31
+# G -> 32
+# Y -> 33
+
+# \e[<code>m
