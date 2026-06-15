@@ -1,13 +1,52 @@
 #!/bin/bash
 
-USERID=$(id -u)
-echo "Please run this script with $USERID root access"
+# install mysql command through shell script
+# 1. user should have root access or run script with root access
+# 2. if root allow, otherwise exit the script with proper reason
+# 3. install the command
+# 4. check exit status, if 0 show success
+# 5. if not 0 show failure
 
-# Check root access or not
-# if [ $USERID -ne 0 ]; then
-#     echo "Please run this script with root access"
-#     exit 1
-# fi
+# it is our responsibility to check everytime whether the previous command is succes or not
+
+# add another thing, check if package is already installed or not, if installed show already installed, otherwise install
+
+# functions
+# =========
+# keep the repeated code in a function, call that function when required. pass the inputs required for that function
+
+# 1. less lines of code
+# 2. less time
+# 3. less resources
+
+# FUNC_NAME(){
+# 	$1 $2
+# 	keep the code here
+# }
+
+# FUNC_NAME arg-1 arg-2
+
+# redirections
+# ============
+# < -> inputs
+# > -> output
+# >> -> append to output
+
+# 1 -> success
+# 2 ->  failure
+# & -> succes/failure
+
+
+USERID=$(id -u)
+#echo "Please run this script with $USERID root access"
+
+Check root access or not
+if [ $USERID -ne 0 ]; then
+    echo "Please run this script with root access"
+    exit 1
+fi
+
+echo "I am continuing.......Afrin"
 
 # first arg -> what are you trying to install
 # second arg -> exit code
