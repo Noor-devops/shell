@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-LOGS_DIR=/var/log/shell-script
+LOGS_DIR=/home/ec3-user/shell-logs
 LOGS_FILE="$LOGS_DIR/$0.log" # /home/ec2-user/shell-logs/10-logs.sh.log
 
 # Check root access or not
