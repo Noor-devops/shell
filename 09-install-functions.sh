@@ -61,14 +61,15 @@ fi
 # echo "I am continuing..."
 echo "Install MySQL..."
 dnf install mysffql -y
-echo "I am continuing..."
-echo "I am still continuing..."
+
 if [ $? -ne 0 ]; then
         echo "Installing mysql is ... FAILED"
         exit 1
     else
         echo "Installing mysql is ... SUCCESS"
     fi
+echo "I am continuing..."
+echo "I am still continuing..."
 # dnf list installed mysql
 
 # if [ $? -eq 0 ]; then
