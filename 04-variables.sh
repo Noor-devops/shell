@@ -6,6 +6,6 @@ read USER_NAME # here USER_NAME is variable, whatever you enter in terminal stor
 echo "Username is $USER_NAME"
 
 echo "Please enter your password::"
-read  PASSWORD # -s for silent
+read -s PASSWORD # -s for silent
 
 echo "Password is: $PASSWORD"
