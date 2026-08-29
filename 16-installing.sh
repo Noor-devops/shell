@@ -1,2 +1,2 @@
-USERID=(id -u)
-echo $USERID
+USERID=$(id -u)
+echo "$USERID"
