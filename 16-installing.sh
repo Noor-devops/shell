@@ -8,6 +8,7 @@ fi
 
 
 dnf list installed mysql
+
 if [ $? -eq 0 ]; then
     echo "mysql already installed ... skipping"
     exit 1
@@ -24,6 +25,7 @@ else
 fi    
 
 dnf list installed nginx
+
 if [ $? -eq 0 ]; then
     echo "ngnix already installed ... skipping"
     exit 1
