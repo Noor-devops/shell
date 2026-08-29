@@ -32,7 +32,7 @@ if [ $? -eq 0 ]; then
     exit 1
 else
     echo "installing nginx"
-    dnf install ngnix -y
+    dnf install nginx -y
 
     if [ $? -ne 0 ]; then
         echo "installimg is ...failed"
