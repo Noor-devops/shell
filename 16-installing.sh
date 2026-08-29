@@ -24,6 +24,7 @@ else
     fi
 fi    
 
+
 dnf list installed nginx
 
 if [ $? -eq 0 ]; then
