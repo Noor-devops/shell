@@ -22,3 +22,19 @@ else
         echo "installing is success"
     fi
 fi    
+
+dnf list installed nginx
+if [ $? -eq 0 ]; then
+    echo "ngnix already installed ... skipping"
+    exit 1
+else
+    echo "installing nginx"
+    dnf install ngnix -y
+
+    if [ $? -ne 0 ]; then
+        echo "installimg is ...failed"
+        exit 1
+    else
+        echo "installing is success"
+    fi
+fi    
