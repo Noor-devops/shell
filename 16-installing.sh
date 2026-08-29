@@ -6,12 +6,19 @@ if [ $USERID -ne 0 ]; then
     exit 1 # edi manam tesukuntunna precration
 fi
 
-echo "installing mysql"
-dnf install mysql -y
 
-if [ $? -ne 0 ]; then
-    echo "installimg is ...failed"
+dnf list installed mysql
+if [ $? -eq 0 ]; then
+    echo "mysql already installed ... skipping"
     exit 1
 else
-    echo "installing is success"
-fi
+    echo "installing mysql"
+    dnf install mysql -y
+
+    if [ $? -ne 0 ]; then
+        echo "installimg is ...failed"
+        exit 1
+    else
+        echo "installing is success"
+    fi
+fi    
