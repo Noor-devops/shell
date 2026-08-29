@@ -123,3 +123,4 @@ fi
 #     dnf install nginx -y
 #     VALIDATE nginx $?
 # fi
+user=(id -u)
