@@ -24,7 +24,7 @@ else
     fi
 fi    
 
-
+echo "installing nginx"
 dnf list installed nginx
 
 if [ $? -eq 0 ]; then
