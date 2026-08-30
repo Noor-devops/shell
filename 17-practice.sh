@@ -9,3 +9,10 @@ fi
 echo "installing nodejs"
 
 dnf install nodejs -y
+
+if [ $? -ne 0 ]; then
+    echo "nodejs installation failed."
+    exit 1
+else 
+    echo "nodejs installation successfull"
+fi
