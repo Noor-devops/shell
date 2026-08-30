@@ -8,7 +8,7 @@ fi
 
 dnf list installed mysql
 
-if [$? -eq 0]; then
+if [ $? -eq 0 ]; then
     echo "mysql is already installed....SKIPPING"
     exit 1
 else
