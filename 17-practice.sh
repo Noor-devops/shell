@@ -6,13 +6,17 @@ if [ $userid -ne 0 ]; then
     exit 1
 fi
 
-echo "installing nodejs"
+dnf list installed nodejs
 
-dnf install nodejs -y
-
-if [ $? -ne 0 ]; then
-    echo "nodejs installation failed."
-    exit 1
-else 
-    echo "nodejs installation successfull"
+if [$? -eq 0]; then
+    echo "nodejs is already installed....SKIPPING"
+else
+    echo "installing nodejs"
+    dnf install nodejs -y
+    if [ $? -ne 0 ]; then
+        echo "nodejs installation failed."
+        exit 1
+    else 
+        echo "nodejs installation successfull"
+    fi
 fi
