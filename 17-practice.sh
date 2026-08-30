@@ -6,18 +6,18 @@ if [ $userid -ne 0 ]; then
     exit 1
 fi
 
-dnf list installed nodejs
+dnf list installed mysql
 
 if [$? -eq 0]; then
-    echo "nodejs is already installed....SKIPPING"
+    echo "mysql is already installed....SKIPPING"
     exit 1
 else
-    echo "installing nodejs"
-    dnf install nodejs -y
+    echo "installing mysql"
+    dnf install mysql -y
     if [ $? -ne 0 ]; then
-        echo "nodejs installation failed."
+        echo "mysql installation failed."
         exit 1
     else 
-        echo "nodejs installation successfull"
+        echo "mysql installation successfull"
     fi
 fi
