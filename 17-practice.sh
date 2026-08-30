@@ -10,6 +10,7 @@ dnf list installed nodejs
 
 if [$? -eq 0]; then
     echo "nodejs is already installed....SKIPPING"
+    exit 1
 else
     echo "installing nodejs"
     dnf install nodejs -y
