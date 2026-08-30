@@ -1,4 +1,5 @@
 userid=$(id -u)
+echo "$userid"
 #echo "this is root user $userid"
 
 # if [ $? -ne 0 ]; then
