@@ -43,7 +43,7 @@ dnf list installed mysql
 
 if [ $? -eq 0 ]; then
     echo "mysql is already installed....SKIPPING"
-    exit 1
+    #exit 1
 else
     echo "installing mysql"
     dnf install mysql -y
@@ -54,7 +54,7 @@ dnf list installed nginx
 
 if [ $? -eq 0 ]; then
     echo "nginx is already installed....SKIPPING"
-    exit 1
+    #exit 1
 else
     echo "installing nginx"
     dnf install nginx -y
