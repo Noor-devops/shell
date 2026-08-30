@@ -5,4 +5,7 @@ if [ $userid -ne 0 ]; then
     echo "please try to install with root access"
     exit 1
 fi
-echo "love"
+
+echo "installing nodejs"
+
+dnf install nodejs -y
