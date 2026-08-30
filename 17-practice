@@ -1,0 +1,2 @@
+userid=$(id -u)
+echo "this is root user $userid"
