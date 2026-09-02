@@ -21,8 +21,8 @@ VALIDATE(){
 for package in $@
 do
     echo "Installing $package"
-    dnf list installed $package
-    dnf install $package
+    dnf list installed $package &>> $LOGS_FILE
+    dnf install $package &>> $LOGS_FILE
     VALIDATE $? "Installing $package"
 
 done
