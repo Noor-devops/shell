@@ -1,10 +1,10 @@
 
 #!/bin/bash
 
-for number in {1..100}
-do
-    echo $number
-done
+# for number in {1..100}
+# do
+#     echo $number
+# done
 
 # loops
 # ======
@@ -21,3 +21,8 @@ done
 
 
 # script.sh mysql nginx
+
+for shanu in {1,50}
+do
+    echo $shanu
+done
