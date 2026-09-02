@@ -11,10 +11,10 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0 ]; then
-        echo "$TIMESTAMP [ERROR] Installing $2 is.....Failed" | tee -a $LOGS_FILE
+    if [ $2 -ne 0 ]; then
+        echo "$TIMESTAMP [ERROR] Installing $1 is.....Failed" | tee -a $LOGS_FILE
     else
-        echo "$TIMESTAMP [INFO] Installing $2 is.....Success" | tee -a $LOGS_FILE
+        echo "$TIMESTAMP [INFO] Installing $1 is.....Success" | tee -a $LOGS_FILE
     fi
 }
 
