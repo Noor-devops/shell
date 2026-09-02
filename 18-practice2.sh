@@ -9,12 +9,14 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+# if [ $USERID -ne 0 ]; then
+#     echo "Please run this script with root access"
+#     exit 1
+# fi
+
 for package in $@
 do
     echo "installing $package"
 done
 
-if [ $USERID -ne 0 ]; then
-    echo "Please run this script with root access"
-    exit 1
-fi
+
