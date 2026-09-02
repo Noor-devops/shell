@@ -22,7 +22,7 @@
 
 # script.sh mysql nginx
 
-for shanu in {1,50}
+for shanu in {1..50}
 do
     echo $shanu
 done
