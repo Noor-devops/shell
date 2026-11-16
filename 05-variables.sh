@@ -3,7 +3,7 @@
 # TIMESTAMP=$(date)  -- running a command inside the shell script and take output in timestamp variable.
 # echo "Time is: $TIMESTAMP"
 
-START_TIME=$(date +%s)
+START_TIME=$(date +%s) #$(linux command)
 
 sleep 10
 
