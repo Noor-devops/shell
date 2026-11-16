@@ -30,9 +30,9 @@ NUMBER=$1
 #     echo "given number $num1 is less to $num2"
 # fi
 
-num = 10
-rem = $(num%2)
-if [ $rem -eq  0]; then
+num =10
+rem = $((num%2))
+if [ $rem -eq  0 ]; then
 	echo "$num is even"
 else 
 	echo"$num is odd"
