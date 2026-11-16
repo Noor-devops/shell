@@ -9,31 +9,31 @@ NUMBER=$1
 # ge - greater than or equal
 # le - less than or equal
 
-# if [ $NUMBER -gt 20 ]; then
-#     echo "Given number $NUMBER is greater to 20"
-# elif [ $NUMBER -eq 20 ]; then
-#     echo "Given number $NUMBER is equal to 20"
-# else
-#     echo "Given number $NUMBER is less than 20"
-# fi
-
-# sleep 5 &
-# echo "PID of the background command running just now: $!"
-# wait $!
-
-# num1=$1
-# num2=$2
-
-# if [ $num1 -ge $num2 ]; then
-#     echo "given number $num1 is grater or equl to $num2"
-# else   
-#     echo "given number $num1 is less to $num2"
-# fi
-
-num=$1
-rem=$((num%2))
-if [ $rem -eq  0 ]; then
-	echo "$num is even"
-else 
-	echo "$num is odd"
+if [ $NUMBER -gt 20 ]; then
+    echo "Given number $NUMBER is greater to 20"
+elif [ $NUMBER -eq 20 ]; then
+    echo "Given number $NUMBER is equal to 20"
+else
+    echo "Given number $NUMBER is less than 20"
 fi
+
+sleep 5 &
+echo "PID of the background command running just now: $!"
+wait $!
+
+num1=$1
+num2=$2
+
+if [ $num1 -ge $num2 ]; then
+    echo "given number $num1 is grater or equl to $num2"
+else   
+    echo "given number $num1 is less to $num2"
+fi
+
+# num=$1
+# rem=$((num%2))
+# if [ $rem -eq  0 ]; then
+# 	echo "$num is even"
+# else 
+# 	echo "$num is odd"
+# fi
