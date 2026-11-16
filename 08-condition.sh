@@ -31,7 +31,7 @@ NUMBER=$1
 # fi
 
 num=10
-rem = $((num%2))
+rem=$((num%2))
 if [ $rem -eq  0 ]; then
 	echo "$num is even"
 else 
