@@ -2,8 +2,6 @@
 USERID=$(id -u)
 #echo "User ID is: $USERID"
 if [ $USERID -eq 0 ]; then
-    echo "You are root user"
+    echo "please run this script with root access"
     echo "Installing nginx"
-    else
-    echo "You are not root user"
 fi
