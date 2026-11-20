@@ -57,12 +57,13 @@ fi
 # first arg-> what are u trying to install, second arg-> exit code
 VALIDATE(){
     if [ $2 -ne 0 ]; then
-        echo -e "Installing $1 is ....$R FAILED $N | tee -a $LOGS_FILE
+        echo -e "Installing $1 is ....$R FAILED $N" | tee -a $LOGS_FILE
         exit 1
     else
         echo -e "Installing $1 is ....$G SUCCESS $N" | tee -a $LOGS_FILE
     fi
 }
+
 for package in $@
 do
     echo "Installing $package"
