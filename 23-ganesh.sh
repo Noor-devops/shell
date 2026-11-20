@@ -1,8 +1,11 @@
 #!/bin/bash
 # checking sudo user or not
 USERID=$(id -u)
-LOGS_DIR=/var/log/shell-script
-LOGS_FILE="$LOGS_DIR/$0.log"
+LOGS_FOLDER="/var/log/roboshop"
+sudo mkdir -p $LOGS_FOLDER
+sudo chown -R ec2-user:ec2-user $LOGS_FOLDER
+sudo chmod -R 755 $LOGS_FOLDER
+LOGS_FILE="$LOGS_FOLDER/$0.log"
 #echo "User ID is: $USERID"
 if [ $USERID -ne 0 ]; then
     echo "please run this script with root access"
