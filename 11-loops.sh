@@ -22,7 +22,12 @@
 
 # script.sh mysql nginx
 
-for shanu in {1..50}
-do
-    echo $shanu
+# for shanu in {1..50}
+# do
+#     echo $shanu
+# done
+
+for i in {1..20}
+do 
+    echo $i
 done
