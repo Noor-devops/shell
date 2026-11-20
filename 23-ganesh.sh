@@ -24,6 +24,14 @@ else
     VALIDATE nginx $?
 fi
 
+dnf list installed mysql
+if [ $? -eq 0 ]; then
+    echo "mysql is already installed..SKIPPING"
+else 
+    echo "Installing mysql"
+    dnf install mysql -y
+    VALIDATE mysql $?
+fi
 
 
 # dnf list installed mysql
