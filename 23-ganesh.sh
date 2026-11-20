@@ -22,7 +22,7 @@ VALIDATE(){
 }
 dnf list installed nginx &>> $LOGS_FILE
 if [ $? -eq 0 ]; then
-    echo "nginx is already installed..SKIPPING" | tee -a$LOGS_FILE
+    echo "nginx is already installed..SKIPPING" | tee -a $LOGS_FILE
 else 
     echo "Installing nginx"
     dnf install nginx -y &>> $LOGS_FILE
