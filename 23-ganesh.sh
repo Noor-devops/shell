@@ -9,7 +9,7 @@ fi
 dnf list installed nginx
 if [ $? -eq 0 ]; then
     echo "nginx is already installed"
-    exit 0
+    #exit 0
 fi
 echo "Installing nginx"
 dnf install nginx -y
@@ -17,7 +17,7 @@ dnf install nginx -y
 dnf list installed mysql
 if [ $? -eq 0 ]; then
     echo "mysql is already installed"
-    exit 0
+    #exit 0
 fi
 echo "Installing mysql"
 dnf install mysql -y
@@ -25,7 +25,7 @@ dnf install mysql -y
 dnf list installed git
 if [ $? -eq 0 ]; then
     echo "git is already installed"
-    exit 0
+    #exit 0
 fi
 echo "Installing git"
 dnf install git -y
