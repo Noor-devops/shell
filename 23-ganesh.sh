@@ -1,8 +1,8 @@
 #!/bin/bash
 # checking sudo user or not
 USERID=$(id -u)
-LOGS_DIR=/tmp/roboshop.log
-LOGS_FILE="$LOGS_DIR/roboshop.log"
+LOGS_DIR=/var/log/shell-script
+LOGS_FILE="$LOGS_DIR/$0.log"
 #echo "User ID is: $USERID"
 if [ $USERID -ne 0 ]; then
     echo "please run this script with root access"
