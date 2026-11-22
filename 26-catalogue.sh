@@ -35,6 +35,10 @@ VALIDATE "Enabling Node.js module" $?
 dnf install nodejs -y &>> $LOGS_FILE
 VALIDATE "Installing Node.js" $?
 
-useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>> $LOGS_FILE
-VALIDATE "Adding roboshop user" $?
-
+id roboshop &>> $LOGS_FILE
+if [ $? -ne 0 ]; then
+    useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>> $LOGS_FILE
+    VALIDATE "Adding roboshop user" $?
+else
+    echo -e "$TIMESTAMP: [INFO] roboshop user already exists..SKIPPING" | tee -a $LOGS_FILE
+fi
