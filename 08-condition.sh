@@ -40,7 +40,7 @@ fi
 
 number=$1
 reminder=$((number%2))
-if [ $reminder -eq 0 ]; then
+if [ $reminder -ne 0 ]; then
     echo "$number is even"
 else
     echo "$number is odd"
