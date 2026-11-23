@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # checking sudo user or not
 # USERID=$(id -u)
 # LOGS_FOLDER="/var/log/roboshop"
@@ -37,7 +38,12 @@
 #     dnf install mysql -y &>> $LOGS_FILE
 #     VALIDATE mysql $?
 # fi
-
+# gt - greater than
+# lt - less than
+# eq - equal
+# ne - not equal
+# ge - greater than or equal
+# le - less than or equal
 
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/roboshop"
@@ -71,7 +77,7 @@ do
     dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then
         dnf install $package -y &>> $LOGS_FILE
-        VALIDATE $package $?
+        VALIDATE $package $? # $1=package, $2=exit code of dnf install command
     else
         echo -e "$TIMESTAMP: [INFO] $package is already installed..$Y SKIPPING $N" | tee -a $LOGS_FILE
     fi 

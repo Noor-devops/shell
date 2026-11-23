@@ -42,3 +42,19 @@ if [ $? -ne 0 ]; then
 else
     echo -e "$TIMESTAMP: [INFO] roboshop user already exists.. $Y SKIPPING $N" | tee -a $LOGS_FILE
 fi
+
+rm -rf /app
+VALIDATE "Removing old app content" $?
+
+rm -rf /tmp/catalogue.zip 
+VALIDATE "Removing old catalogue.zip" $?
+
+mkdir -p /app &>> $LOGS_FILE
+VALIDATE "Creating app directory" $?
+
+
+
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+cd /app 
+unzip /tmp/catalogue.zip
+VALIDATE "Extracting catalogue.zip" $?
