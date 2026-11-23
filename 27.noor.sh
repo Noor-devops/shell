@@ -5,3 +5,5 @@ if [ $userid -eq 0 ]; then
 else 
 	echo "please try to install with root access"
 fi
+dnf list installed nginx
+dnf install nginx -y 
